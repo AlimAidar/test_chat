@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:test_chat/src/common/constants/color_constants.dart';
@@ -41,7 +43,7 @@ class _MessageScreenState extends State<MessageScreen> {
         _imageFile = pickedFile;
       });
     } catch (e) {
-      print('Error picking image: $e');
+      log('Error picking image: $e');
     }
   }
 

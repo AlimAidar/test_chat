@@ -5,7 +5,7 @@ import 'package:test_chat/src/common/constants/color_constants.dart';
 class TestTextField extends StatefulWidget {
   const TestTextField({
     Key? key,
-     this.placeholder ='',
+    this.placeholder = '',
     this.lableText = '',
     this.prefixIcon,
     this.suffixIcon,
@@ -18,7 +18,8 @@ class TestTextField extends StatefulWidget {
     this.enableBorderColor,
     this.labelStyle,
     this.inputFormatters,
-    this.textInputType, this.onEditingComplete,
+    this.textInputType,
+    this.onEditingComplete,
   }) : super(key: key);
 
   final String placeholder;
@@ -35,7 +36,7 @@ class TestTextField extends StatefulWidget {
   final TextStyle? labelStyle;
   final List<TextInputFormatter>? inputFormatters;
   final TextInputType? textInputType;
-  final Function()?onEditingComplete;
+  final Function()? onEditingComplete;
 
   @override
   State<TestTextField> createState() => _TestTextFieldState();
@@ -48,7 +49,7 @@ class _TestTextFieldState extends State<TestTextField> {
       decoration: BoxDecoration(
           color: AppColors.lightGrey, borderRadius: BorderRadius.circular(15)),
       child: TextFormField(
-      onEditingComplete:widget.onEditingComplete ,
+        onEditingComplete: widget.onEditingComplete,
         keyboardType: widget.textInputType,
         inputFormatters: widget.inputFormatters,
         scrollPadding: EdgeInsets.zero,
@@ -57,7 +58,7 @@ class _TestTextFieldState extends State<TestTextField> {
         obscureText: widget.obscureText,
         onChanged: widget.onChanged,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.zero,
+          contentPadding: const EdgeInsets.only(left: 10),
           enabledBorder: OutlineInputBorder(
               gapPadding: 2,
               borderSide: BorderSide(
@@ -78,13 +79,8 @@ class _TestTextFieldState extends State<TestTextField> {
           labelText: widget.lableText,
           labelStyle:
               widget.labelStyle ?? const TextStyle(color: AppColors.black),
-          prefixIcon: 
-            widget.prefixIcon,
-          
-          suffixIcon: IconButton(
-            onPressed: widget.iconPressed,
-            icon: widget.suffixIcon ?? const Offstage(),
-          ),
+          prefixIcon: widget.prefixIcon,
+          suffixIcon: widget.suffixIcon,
           border: OutlineInputBorder(
             gapPadding: 2,
             borderSide: const BorderSide(
