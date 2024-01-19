@@ -23,7 +23,9 @@ class MessageAppBarWidget extends StatelessWidget {
       child: Row(
         children: [
           TestButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             labelWidget: const Icon(Icons.arrow_back_ios_new),
           ),
           iamge != null
