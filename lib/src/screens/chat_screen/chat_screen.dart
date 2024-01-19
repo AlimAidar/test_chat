@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:test_chat/src/common/constants/color_constants.dart';
 import 'package:test_chat/src/common/constants/text_styles.dart';
+import 'package:test_chat/src/common/local/message_screen_args.dart';
+import 'package:test_chat/src/common/router/routing_constant.dart';
 import 'package:test_chat/src/common/widgets/test_text_field.dart';
 import 'package:test_chat/src/screens/chat_screen/widgets/chat_widget.dart';
 
@@ -66,12 +68,13 @@ class _ChatScreenState extends State<ChatScreen> {
               const SizedBox(
                 height: 6,
               ),
-              const TestTextField(
-                prefixIcon: Icon(
+              TestTextField(
+                prefixIcon: const Icon(
                   Icons.search,
-                  color: AppColors.darkGrey,
+                  color: AppColors.grey,
                 ),
-                placeholder: 'Поиск',
+                lableText: 'Поиск',
+                labelStyle: TextStyles.lableTextStyle,
               ),
               const SizedBox(
                 height: 24,
@@ -80,7 +83,18 @@ class _ChatScreenState extends State<ChatScreen> {
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return ChatWidget(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        RoutingConstant.chatMessage,
+                        arguments: MessageScreenArgs(
+                          name: listChat[index]['name'],
+                          status: 'В сети',
+                          iamge: listChat[index]['image'],
+                          iamgeText: listChat[index]['imageText'],
+                        ),
+                      );
+                    },
                     name: listChat[index]['name'],
                     lastMessage: listChat[index]['lastMessage'],
                     incomingMessage: listChat[index]['incoming'],

@@ -11,7 +11,7 @@ class AppColors {
   static const Color orangeGradient4 = Color(0xFFED3900);
   static const Color black = Color(0xFF2B333E);
   static const Color lightGrey = Color(0xFFEDF2F6);
-  static const Color grey = Color(0xFFEDF2F6);
+  static const Color grey = Color(0xFF9DB7CB);
+  static const Color dividerColor = Color(0xFFEDF2F6);
   static const Color darkGrey = Color(0xFF5E7A90);
 }
-

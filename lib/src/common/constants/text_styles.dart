@@ -27,4 +27,11 @@ class TextStyles {
     fontWeight: FontWeight.w700,
     fontFamily: 'FuturaPT-Demi',
   );
+
+  static TextStyle lableTextStyle = const TextStyle(
+    color: AppColors.grey,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'FuturaPT-Demi',
+  );
 }
